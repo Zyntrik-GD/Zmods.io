@@ -3,133 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zmods</title>
+    <title>Zmods - Inicio</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
         }
-
-        header {
-            max-width: 800px;
+        /* Menú de Navegación */
+        nav {
+            background-color: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            max-width: 600px;
             margin: 0 auto 40px auto;
-        }
-
-        h1 {
-            color: #58a6ff;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #8b949e;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 20px;
         }
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        nav a:hover, nav a.active {
+            background-color: #30363d;
+        }
+        header { max-width: 800px; margin: 0 auto 30px auto; }
+        h1 { color: #58a6ff; font-size: 2.8rem; margin-bottom: 10px; }
+        p { color: #8b949e; font-size: 1.1rem; }
 
-        .card {
+        /* Tarjetas de Selección de Categoría */
+        .categories-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
             background-color: #161b22;
-            padding: 24px;
-            border-radius: 12px;
             border: 1px solid #30363d;
-            text-align: left;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-decoration: none;
+            color: inherit;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            align-items: center;
+            transition: transform 0.2s, border-color 0.2s;
         }
-
-        .card:hover {
-            transform: translateY(-4px);
+        .category-card:hover {
+            transform: translateY(-5px);
             border-color: #58a6ff;
         }
-
-        .tag {
-            display: inline-block;
+        .category-card h2 { color: #f0f6fc; margin-bottom: 10px; font-size: 1.5rem; }
+        .category-card p { font-size: 0.95rem; margin-bottom: 20px; }
+        .btn-cat {
             background-color: #238636;
-            color: #ffffff;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 4px 8px;
+            color: white;
+            padding: 8px 16px;
             border-radius: 6px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .card h2 {
-            color: #f0f6fc;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #8b949e;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .btn-download {
-            display: inline-block;
-            background-color: #238636;
-            color: #ffffff;
-            text-decoration: none;
-            text-align: center;
-            padding: 10px 16px;
-            border-radius: 8px;
             font-weight: bold;
-            transition: background-color 0.2s ease;
         }
-
-        .btn-download:hover {
-            background-color: #2ea043;
-        }
-
-        footer {
-            margin-top: 60px;
-            color: #484f58;
-            font-size: 0.9rem;
-        }
+        footer { margin-top: 60px; color: #484f58; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
+    <!-- Menú Superior -->
+    <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="minecraft.html">Minecraft</a>
+        <a href="geometrydash.html">Geometry Dash</a>
+    </nav>
+
     <header>
         <h1>Zmods</h1>
-        <p>Catálogo de mods, utilidades y proyectos propios para tus juegos favoritos.</p>
+        <p>Elige una categoría de juegos para ver y descargar todos los mods disponibles.</p>
     </header>
 
-    <main class="container">
+    <!-- Secciones / Tarjetas de Elección -->
+    <main class="categories-container">
         
-        <!-- Tarjeta de Mod 1 -->
-        <div class="card">
-            <div>
-                <span class="tag">Geometry Dash</span>
-                <h2>Nombre del Mod 1</h2>
-                <p>Descripción detallada de la función principal de tu mod, opciones del menú o características destacadas.</p>
-            </div>
-            <a href="#" class="btn-download">Descargar Mod</a>
-        </div>
+        <a href="minecraft.html" class="category-card">
+            <h2>Minecraft</h2>
+            <p>Shaders, mods de optimización, horror y utilidades Java.</p>
+            <span class="btn-cat">Ver Mods</span>
+        </a>
 
-        <!-- Tarjeta de Mod 2 -->
-        <div class="card">
-            <div>
-                <span class="tag">Minecraft</span>
-                <h2>Nombre del Mod 2</h2>
-                <p>Añade nuevas mecánicas, entidades o shader pipelines optimizados para mejorar la experiencia de juego.</p
+        <a href="geometrydash.html" class="category-card">
+            <h2>Geometry Dash</h2>
+            <p>Geode mods, herramientas de análisis y macros personalizadas.</p>
+            <span class="btn-cat">Ver Mods</span>
+        </a>
+
+    </main>
+
+    <footer>
+        <p>© Zmods — Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
